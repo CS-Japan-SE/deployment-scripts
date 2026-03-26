@@ -1,7 +1,7 @@
 # Falcon sensor for Linux インストールスクリプト利用ガイド
 
 以下URLのスクリプトを用いてLinux環境へFalconセンサーをインストールする方法を説明します。  
-https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install
+https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install  
 本ページは日本語の簡易ガイドです。詳細な使用方法は、スクリプトの英語ページをご確認ください。
 
 
