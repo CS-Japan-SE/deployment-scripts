@@ -59,7 +59,7 @@ curl -L https://raw.githubusercontent.com/crowdstrike/falcon-scripts/v1.12.0/bas
 > AWS SSM parameter store による方法は後述します。
 
 
-### パターン B：AWS SSM Parameter Store から認証情報を取得（本番環境推奨）
+### パターン B：AWS SSM Parameter Store からAPIキーを取得（本番環境推奨）
 **Step 1：SSM Parameter Store にAPIキーを登録**
 
 ```bash
