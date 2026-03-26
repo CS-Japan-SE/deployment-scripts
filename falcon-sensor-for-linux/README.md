@@ -1,4 +1,4 @@
-# Falcon sensor for Linux インストールスクリプト利用ガイド
+# Falcon sensor for Linux インストールスクリプト 利用ガイド
 
 以下URLのスクリプトを用いてLinux環境へFalconセンサーをインストールする方法を説明します。  
 https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install  
@@ -52,9 +52,9 @@ export FALCON_CLIENT_SECRET="<Your_Client_Secret>"
 
 curl -L https://raw.githubusercontent.com/crowdstrike/falcon-scripts/v1.12.0/bash/install/falcon-linux-install.sh | bash
 ```
-このスクリプトをAWS EC2 - User Data のような起動スクリプトに記述しても動作します。
-> ⚠️ セキュリティの観点から、APIキーの直接入力は推奨しません。  
-> 本番環境ではAWS SSM parameter storeのような安全にキーを管理できる仕組みをお使いください。  
+このスクリプトは、AWS EC2 - User Data のような起動スクリプトに記述しても動作します。
+> ⚠️ ただし、セキュリティの観点から、APIキーの直接記述は推奨しません。  
+> 本番環境ではAWS SSM parameter storeのように安全にキーを管理できる仕組みをお使いください。  
 > AWS SSM parameter store による方法は後述します。
 
 
