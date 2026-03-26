@@ -9,7 +9,7 @@ https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install
 
 # 動作概要
 
-スクリプトは以下の処理を行います。
+このスクリプトは以下の処理を行います。
 
 1. CrowdStrike API への OAuth2 認証
 2. 対象OSに適合する最新センサーパッケージのダウンロード
@@ -17,10 +17,6 @@ https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install
 4. CID の取得とセンサーの登録（`falconctl -s`）
 5. サービスの起動（`systemctl restart falcon-sensor` / `service falcon-sensor restart`）  
 
-> **重要な動作仕様：**  
-> スクリプトは実行環境が **AWS EC2 であることを自動検出** します。  
-> EC2上で実行した場合、環境変数 `FALCON_CLIENT_ID` / `FALCON_CLIENT_SECRET` が未設定でも、  
-> **AWS SSM Parameter Store** から自動的に `FALCON_CLIENT_ID` および `FALCON_CLIENT_SECRET` の取得を試みます。
 
 
 # 事前準備 - CrowdStrike APIキーの取得
@@ -60,6 +56,11 @@ curl -L https://raw.githubusercontent.com/crowdstrike/falcon-scripts/v1.12.0/bas
 
 
 ### パターン B：AWS SSM Parameter Store からAPIキーを取得（本番環境推奨）
+
+このスクリプトは実行環境が **AWS EC2 であることを自動検出** します。  
+EC2上で実行した場合、環境変数 `FALCON_CLIENT_ID` / `FALCON_CLIENT_SECRET` が未設定でも、**AWS SSM Parameter Store** から自動的に `FALCON_CLIENT_ID` および `FALCON_CLIENT_SECRET` の取得を試みます。
+
+
 **Step 1：SSM Parameter Store にAPIキーを登録**
 
 ```bash
@@ -145,7 +146,7 @@ curl -L https://raw.githubusercontent.com/crowdstrike/falcon-scripts/v1.12.0/bas
 | `FALCON_APD` | 未設定 | プロキシの有効/無効（`true` / `false`） |
 | `FALCON_APH` | 未設定 | プロキシホスト（例：`proxy.example.com`） |
 | `FALCON_APP` | 未設定 | プロキシポート（例：`8080`） |
-| `FALCON_BACKEND` | `auto` | センサーバックエンド（`auto` / `bpf` / `kernel`） |
+| `FALCON_BACKEND` | `auto` | センサー動作モード（`auto` / `bpf` / `kernel`） |
 | `FALCON_INSTALL_ONLY` | `false` | `true` にするとインストールのみ（登録しない） |
 | `FALCON_DOWNLOAD_ONLY` | `false` | `true` にするとダウンロードのみ（インストールしない） |
 | `PREP_GOLDEN_IMAGE` | `false` | `true` にするとゴールデンイメージ用に準備（AID削除） |
