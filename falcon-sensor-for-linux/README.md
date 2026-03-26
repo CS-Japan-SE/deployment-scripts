@@ -1,13 +1,14 @@
 # Falcon sensor for Linux インストールスクリプト利用ガイド
 
-[このスクリプト](https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install) を用いてLinux環境へFalconセンサーをインストールする方法を説明します。  
-本ページは日本語の簡易ガイドです。詳細な使用方法は、[スクリプトの英語ページ](https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install)をご確認ください。
+以下URLのスクリプトを用いてLinux環境へFalconセンサーをインストールする方法を説明します。  
+https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install
+本ページは日本語の簡易ガイドです。詳細な使用方法は、スクリプトの英語ページをご確認ください。
 
 
 
-# 概要
+# 動作概要
 
-インストールスクリプトを使用することで、以下の処理を自動で実行できます。
+スクリプトは以下の処理を行います。
 
 1. CrowdStrike API への OAuth2 認証
 2. 対象OSに適合する最新センサーパッケージのダウンロード
@@ -22,9 +23,7 @@
 
 
 # 事前準備 - CrowdStrike APIキーの取得
-以下スコープのAPIキーを作成してください。
-
-**取得場所：** Falcon Console → **Support and resources** → **API clients and keys**
+Falconコンソール（**Support and resources** → **API clients and keys**）にて、以下スコープのAPIキーを作成してください。
 
 
 
@@ -53,7 +52,7 @@ export FALCON_CLIENT_SECRET="<Your_Client_Secret>"
 
 curl -L https://raw.githubusercontent.com/crowdstrike/falcon-scripts/v1.12.0/bash/install/falcon-linux-install.sh | bash
 ```
-このスクリプトをAWS EC2 User Data のような起動スクリプトに記述しても動作します。
+このスクリプトをAWS EC2 - User Data のような起動スクリプトに記述しても動作します。
 > ⚠️ セキュリティの観点から、APIキーの直接入力は推奨しません。  
 > 本番環境ではAWS SSM parameter storeのような安全にキーを管理できる仕組みをお使いください。  
 > AWS SSM parameter store による方法は後述します。
