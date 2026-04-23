@@ -34,6 +34,7 @@ Falconコンソール（**Support and resources** → **API clients and keys**�
 
 > ⚠️ **`Hosts [Write]` の使用について：**  
 > `FALCON_REMOVE_HOST=true` でホストをコンソールから削除するよりも、Falcon Console の **Host Retention Policies** の使用を推奨します。
+  
 
 # インストール手順
 
