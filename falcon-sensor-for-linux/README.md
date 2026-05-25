@@ -137,7 +137,7 @@ curl -L https://raw.githubusercontent.com/crowdstrike/falcon-scripts/v1.12.0/bas
 # 主要な環境変数
 必要に応じて追加の環境変数を設定してください。本スクリプトはこれら環境変数を自動で読み込みます。
 
-| 環境変数 | デフォルト | 説明 |
+| 環境変数 | デフォルト値 | 説明 |
 |---------|-----------|------|
 | `FALCON_CLOUD` | 自動検出 | クラウドリージョン（`us-1` / `us-2` / `eu-1` / `us-gov-1` / `us-gov-2`） |
 | `FALCON_CID` | 自動取得 | カスタマーID（省略するとAPIから自動取得） |
