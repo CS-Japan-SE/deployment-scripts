@@ -3,7 +3,7 @@
 以下URLのスクリプトを用いてLinux環境へFalconセンサーをインストールする方法を説明します。  
 https://github.com/CrowdStrike/falcon-scripts/tree/main/bash/install  
 
-本ページは日本語の簡易ガイドです。詳細な使用方法は、スクリプトの英語ページをご確認ください。
+本ページは日本語の簡易ガイドです。詳細な使用方法は、上記の英語ページをご確認ください。
 
 
 
@@ -58,7 +58,7 @@ curl -L https://raw.githubusercontent.com/crowdstrike/falcon-scripts/v1.12.0/bas
 
 ### パターン B：AWS SSM Parameter Store からAPIキーを取得（本番環境推奨）
 
-このスクリプトは実行環境が **AWS EC2 であることを自動検出** します。  
+本スクリプトは実行環境が **AWS EC2 であることを自動検出** します。  
 EC2上で実行した場合、環境変数 `FALCON_CLIENT_ID` / `FALCON_CLIENT_SECRET` が未設定でも、**AWS SSM Parameter Store** から自動的に `FALCON_CLIENT_ID` および `FALCON_CLIENT_SECRET` の取得を試みます。
 
 
